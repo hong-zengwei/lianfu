@@ -1,0 +1,1348 @@
+<html lang="en" class="h-full scroll-smooth antialiased"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>联福机械制造有限公司 - 专业水利设备制造商</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+html,body{font-family:'Inter',sans-serif;background:#000;}
+::-webkit-scrollbar{height:8px;width:8px}
+::-webkit-scrollbar-thumb{background:#333;border-radius:4px}
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn 0.8s ease-out forwards; }
+.fade-in-delay-1 { animation-delay: 0.1s; }
+.fade-in-delay-2 { animation-delay: 0.2s; }
+.fade-in-delay-3 { animation-delay: 0.3s; }
+.fade-in-delay-4 { animation-delay: 0.4s; }
+@keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+
+/* 移动端滑动优化 */
+.touch-scroll {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x pinch-zoom;
+}
+
+/* 滑动指示器 */
+.scroll-indicator {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+  z-index: 10;
+}
+
+.scroll-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #333;
+  transition: background 0.3s ease;
+}
+
+.scroll-dot.active {
+  background: #ff6b00;
+}
+
+/* 移动端图片优化 */
+@media (max-width: 640px) {
+  .product-card {
+    min-width: 75vw !important;
+    max-width: 75vw !important;
+  }
+  
+  .product-card img {
+    height: 180px !important;
+    object-fit: cover;
+  }
+  
+  .product-card .p-5 {
+    padding: 1rem !important;
+  }
+  
+  .product-card h3 {
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  .product-card p {
+    font-size: 0.875rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0.75rem !important;
+  }
+}
+
+/* 分类产品横向滚动 */
+.category-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.category-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.category-slider .product-card {
+  scroll-snap-align: center;
+  flex-shrink: 0;
+}
+</style></head>
+<body class="text-white h-full flex bg-black">
+  <!-- Sidebar -->
+  <aside class="hidden lg:flex flex-col items-center space-y-4 py-6 w-16 bg-[#0a0a0a] border-r border-[#1a1a1a] fade-in">
+    <button class="group relative flex items-center justify-center w-10 h-10 rounded-lg bg-[#ff6b00] shadow-lg shadow-[#ff6b00]/20 hover:shadow-[#ff6b00]/30 transition-all duration-300">
+      <i data-lucide="home" class="w-5 h-5 text-black stroke-[1.5]"></i>
+    </button>
+    <div class="w-6 border-t border-[#1a1a1a] my-2"></div>
+    <button class="group flex items-center justify-center w-10 h-10 rounded-lg hover:bg-[#1a1a1a] transition-all duration-300">
+      <i data-lucide="layout-grid" class="w-5 h-5 stroke-[1.5]"></i>
+    </button>
+    <button class="group flex items-center justify-center w-10 h-10 rounded-lg hover:bg-[#1a1a1a] transition-all duration-300">
+      <i data-lucide="layers-3" class="w-5 h-5 stroke-[1.5]"></i>
+    </button>
+    <button class="group flex items-center justify-center w-10 h-10 rounded-lg hover:bg-[#1a1a1a] transition-all duration-300">
+      <i data-lucide="message-circle" class="w-5 h-5 stroke-[1.5]"></i>
+    </button>
+    <button class="group flex items-center justify-center w-10 h-10 rounded-lg hover:bg-[#1a1a1a] transition-all duration-300">
+      <i data-lucide="bookmark" class="w-5 h-5 stroke-[1.5]"></i>
+    </button>
+    <div class="flex-1"></div>
+    <button class="group flex items-center justify-center w-10 h-10 rounded-lg hover:bg-[#1a1a1a] transition-all duration-300">
+      <i data-lucide="settings" class="w-5 h-5 stroke-[1.5]"></i>
+    </button>
+  </aside>
+
+  <main class="flex-1 overflow-y-auto">
+    <!-- Modern Navigation -->
+    <header class="bg-transparent">
+      <nav class="flex max-w-7xl lg:px-8 mr-auto ml-auto pt-6 pr-4 pb-6 pl-4 items-center justify-between">
+        <!-- Logo/Brand -->
+        <div class="flex items-center space-x-3">
+          <span class="text-xl font-bold tracking-tight text-[#ff6b00]">联福机械制造有限公司</span>
+        </div>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-toggle" class="lg:hidden rounded-lg p-2 hover:bg-[#1a1a1a] transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+            <path d="M4 12h16"></path>
+            <path d="M4 18h16"></path>
+            <path d="M4 6h16"></path>
+          </svg>
+        </button>
+        
+        <!-- Navigation Menu -->
+        <ul id="nav-links" class="fixed inset-0 z-40 hidden flex-col gap-8 lg:static lg:flex lg:flex-row lg:bg-transparent lg:gap-8 lg:backdrop-blur-none bg-black/95 backdrop-blur-md items-center justify-center">
+          <li><a href="#" class="hover:text-[#ff6b00] transition-colors duration-200 text-base font-medium">首页</a></li>
+          <li><a href="#product-grid" class="text-base font-medium hover:text-[#ff6b00] transition-colors duration-200">产品中心</a></li>
+          <li><a href="#process" class="text-base font-medium hover:text-[#ff6b00] transition-colors duration-200">生产工艺</a></li>
+          <li><a href="#about" class="hover:text-[#ff6b00] transition-colors duration-200 text-base font-medium">关于我们</a></li>
+          <li><a href="#consultation" class="hover:text-[#ff6b00] transition-colors duration-200 text-base font-medium">联系我们</a></li>
+          
+          <!-- Mobile Close Button -->
+          <li class="lg:hidden">
+            <button id="mobile-close" class="flex items-center gap-2 rounded-full bg-gradient-to-r from-[#ff6b00] to-orange-500 px-6 py-3 text-sm font-medium text-black hover:from-orange-600 hover:to-red-500 transition-all duration-200">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+              </svg>
+              关闭菜单
+            </button>
+          </li>
+        </ul>
+        
+        <!-- Right Side User Info (Hidden on Mobile, Shown on Desktop) -->
+        <div class="hidden xl:flex items-center space-x-4 ml-4">
+          <button class="p-2 rounded-lg hover:bg-[#1a1a1a] transition-all duration-300">
+            <i data-lucide="search" class="w-5 h-5 stroke-[1.5]"></i>
+          </button>
+          <button class="p-2 rounded-lg hover:bg-[#1a1a1a] transition-all duration-300">
+            <i data-lucide="bell" class="w-5 h-5 stroke-[1.5]"></i>
+          </button>
+          <div class="flex items-center space-x-3">
+            <div class="text-right">
+              <p class="text-sm font-medium">陈美玲</p>
+              <p class="text-xs text-gray-400">高级设计师</p>
+            </div>
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/81508906-af60-495c-ac86-8039b3832a33_320w.jpg" alt="陈美玲" class="w-10 h-10 rounded-full object-cover ring-2 ring-[#1a1a1a] hover:ring-[#ff6b00] transition-all duration-300">
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="mt-12 px-4 sm:px-6 lg:px-12 fade-in fade-in-delay-2">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+        <div>
+          <h1 class="text-4xl sm:text-6xl lg:text-8xl font-light leading-[0.9] tracking-tight">
+            联福 <span class="text-gray-500">机械</span>
+          </h1>
+          <p class="text-lg text-gray-400 mt-6 max-w-lg leading-relaxed">
+            专业水利设备制造商，为全球客户提供高品质的清污机、挡水闸门和驱动设备解决方案。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Tabs -->
+    <section id="category-tabs" class="mt-12 px-4 sm:px-6 lg:px-12 fade-in fade-in-delay-3">
+      <div class="flex items-center justify-between">
+        <div class="flex space-x-8 overflow-x-auto scrollbar-hide">
+          <button class="relative pb-3 text-sm font-medium uppercase tracking-widest whitespace-nowrap" onclick="filterProducts('全部')">
+            <span class="relative">
+              全部
+              <div class="absolute -bottom-3 left-0 h-0.5 w-full bg-[#ff6b00]"></div>
+            </span>
+          </button>
+          <button class="text-sm font-medium uppercase tracking-widest text-gray-500 hover:text-white transition-colors duration-300 whitespace-nowrap" onclick="filterProducts('清污机')">清污机</button>
+          <button class="text-sm font-medium uppercase tracking-widest text-gray-500 hover:text-white transition-colors duration-300 whitespace-nowrap" onclick="filterProducts('挡水闸门')">挡水闸门</button>
+          <button class="text-sm font-medium uppercase tracking-widest text-gray-500 hover:text-white transition-colors duration-300 whitespace-nowrap" onclick="filterProducts('驱动设备')">驱动设备</button>
+          <button class="text-sm font-medium uppercase tracking-widest text-gray-500 hover:text-white transition-colors duration-300 whitespace-nowrap" onclick="filterProducts('配套产品')">配套产品</button>
+        </div>
+        <div class="flex space-x-2">
+          <button id="scroll-left" class="w-8 h-8 rounded-lg border border-[#1a1a1a] flex items-center justify-center hover:bg-[#1a1a1a] transition-all duration-300">
+            <i data-lucide="chevron-left" class="w-4 h-4 stroke-[1.5]"></i>
+          </button>
+          <button id="scroll-right" class="w-8 h-8 rounded-lg border border-[#1a1a1a] flex items-center justify-center hover:bg-[#1a1a1a] transition-all duration-300">
+            <i data-lucide="chevron-right" class="w-4 h-4 stroke-[1.5]"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="mt-8 px-4 sm:px-6 lg:px-12 fade-in fade-in-delay-4">
+      <!-- 全部产品 - 横向滚动布局 -->
+      <div id="all-products" class="relative">
+        <div id="products-slider" class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory space-x-4 pb-4 scrollbar-hide touch-pan-x overscroll-x-contain touch-scroll">
+          <article class="min-w-[75vw] sm:min-w-[280px] lg:min-w-[320px] flex-shrink-0 snap-center group bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#1a1a1a] hover:border-[#2a2a2a] transition-all duration-500 hover:transform hover:scale-[1.02] product-card" data-category="清污机">
+            <div class="relative overflow-hidden">
+              <img src="images/products/清污机1.jpg" alt="回转式清污机" class="w-full h-44 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-2 right-2 bg-black/50 backdrop-blur-sm rounded-full p-1.5">
+                <i data-lucide="heart" class="w-3.5 h-3.5 stroke-[1.5] hover:fill-[#ff6b00] hover:stroke-[#ff6b00] transition-colors duration-300"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs uppercase tracking-widest text-[#ff6b00] font-medium">清污机系列</span>
+                <span class="text-xs text-gray-500">江苏, 中国</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-semibold mb-2 group-hover:text-[#ff6b00] transition-colors duration-300">回转式清污机</h3>
+              <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-3">高效清除水体杂物，配备自动化控制系统，适用于各种水利工程的前池清污作业。</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-gray-500">投产 2024</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[1.5] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></i>
+              </div>
+            </div>
+          </article>
+
+          <article class="min-w-[75vw] sm:min-w-[280px] lg:min-w-[320px] flex-shrink-0 snap-center group bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#1a1a1a] hover:border-[#2a2a2a] transition-all duration-500 hover:transform hover:scale-[1.02] product-card" data-category="挡水闸门">
+            <div class="relative overflow-hidden">
+              <img src="images/products/闸门1.jpg" alt="平面钢闸门" class="w-full h-44 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-2 right-2 bg-black/50 backdrop-blur-sm rounded-full p-1.5">
+                <i data-lucide="heart" class="w-3.5 h-3.5 stroke-[1.5] hover:fill-[#ff6b00] hover:stroke-[#ff6b00] transition-colors duration-300"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs uppercase tracking-widest text-[#ff6b00] font-medium">挡水闸门</span>
+                <span class="text-xs text-gray-500">江苏, 中国</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-semibold mb-2 group-hover:text-[#ff6b00] transition-colors duration-300">平面钢闸门</h3>
+              <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-3">高强度钢结构设计，具备优良的水密性和耐腐蚀性，广泛应用于水利枢纽工程。</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-gray-500">投产 2023</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[1.5] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></i>
+              </div>
+            </div>
+          </article>
+
+          <article class="min-w-[75vw] sm:min-w-[280px] lg:min-w-[320px] flex-shrink-0 snap-center group bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#1a1a1a] hover:border-[#2a2a2a] transition-all duration-500 hover:transform hover:scale-[1.02] product-card" data-category="驱动设备">
+            <div class="relative overflow-hidden">
+              <img src="images/products/启闭机1.jpg" alt="电动推杆系统" class="w-full h-44 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-2 right-2 bg-black/50 backdrop-blur-sm rounded-full p-1.5">
+                <i data-lucide="heart" class="w-3.5 h-3.5 stroke-[1.5] hover:fill-[#ff6b00] hover:stroke-[#ff6b00] transition-colors duration-300"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs uppercase tracking-widest text-[#ff6b00] font-medium">驱动设备</span>
+                <span class="text-xs text-gray-500">江苏, 中国</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-semibold mb-2 group-hover:text-[#ff6b00] transition-colors duration-300">电动推杆系统</h3>
+              <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-3">精密的电动推杆驱动系统，提供稳定可靠的动力输出，适用于各类水利设备控制。</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-gray-500">投产 2024</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[1.5] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></i>
+              </div>
+            </div>
+          </article>
+
+          <article class="min-w-[75vw] sm:min-w-[280px] lg:min-w-[320px] flex-shrink-0 snap-center group bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#1a1a1a] hover:border-[#2a2a2a] transition-all duration-500 hover:transform hover:scale-[1.02] product-card" data-category="配套产品">
+            <div class="relative overflow-hidden">
+              <img src="images/products/闸阀1.jpg" alt="联福控制系统" class="w-full h-44 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-2 right-2 bg-black/50 backdrop-blur-sm rounded-full p-1.5">
+                <i data-lucide="heart" class="w-3.5 h-3.5 stroke-[1.5] hover:fill-[#ff6b00] hover:stroke-[#ff6b00] transition-colors duration-300"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs uppercase tracking-widest text-[#ff6b00] font-medium">配套产品</span>
+                <span class="text-xs text-gray-500">江苏, 中国</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-semibold mb-2 group-hover:text-[#ff6b00] transition-colors duration-300">联福控制系统</h3>
+              <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-3">智能化控制系统，支持远程监控和自动化操作，确保水利设备高效稳定运行。</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-gray-500">投产 2023</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[1.5] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></i>
+              </div>
+            </div>
+          </article>
+
+          <!-- 添加更多产品卡片以展示滚动效果 -->
+          <article class="min-w-[75vw] sm:min-w-[280px] lg:min-w-[320px] flex-shrink-0 snap-center group bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#1a1a1a] hover:border-[#2a2a2a] transition-all duration-500 hover:transform hover:scale-[1.02] product-card" data-category="清污机">
+            <div class="relative overflow-hidden">
+              <img src="images/products/清污机2.jpg" alt="格栅清污机" class="w-full h-44 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-2 right-2 bg-black/50 backdrop-blur-sm rounded-full p-1.5">
+                <i data-lucide="heart" class="w-3.5 h-3.5 stroke-[1.5] hover:fill-[#ff6b00] hover:stroke-[#ff6b00] transition-colors duration-300"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs uppercase tracking-widest text-[#ff6b00] font-medium">清污机系列</span>
+                <span class="text-xs text-gray-500">江苏, 中国</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-semibold mb-2 group-hover:text-[#ff6b00] transition-colors duration-300">格栅清污机</h3>
+              <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-3">专业格栅清污设备，自动清除拦截的垃圾和杂物，保持水流畅通。</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-gray-500">投产 2024</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[1.5] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></i>
+              </div>
+            </div>
+          </article>
+
+          <article class="min-w-[75vw] sm:min-w-[280px] lg:min-w-[320px] flex-shrink-0 snap-center group bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#1a1a1a] hover:border-[#2a2a2a] transition-all duration-500 hover:transform hover:scale-[1.02] product-card" data-category="挡水闸门">
+            <div class="relative overflow-hidden">
+              <img src="images/products/闸门2.jpg" alt="弧形闸门" class="w-full h-44 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-2 right-2 bg-black/50 backdrop-blur-sm rounded-full p-1.5">
+                <i data-lucide="heart" class="w-3.5 h-3.5 stroke-[1.5] hover:fill-[#ff6b00] hover:stroke-[#ff6b00] transition-colors duration-300"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs uppercase tracking-widest text-[#ff6b00] font-medium">挡水闸门</span>
+                <span class="text-xs text-gray-500">江苏, 中国</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-semibold mb-2 group-hover:text-[#ff6b00] transition-colors duration-300">弧形闸门</h3>
+              <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-3">采用弧形设计，承压能力强，适用于大型水利枢纽和水电站的挡水控制。</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-gray-500">投产 2023</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[1.5] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></i>
+              </div>
+            </div>
+          </article>
+
+          <!-- 新增产品 - 使用剩余图片 -->
+          <article class="min-w-[75vw] sm:min-w-[280px] lg:min-w-[320px] flex-shrink-0 snap-center group bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#1a1a1a] hover:border-[#2a2a2a] transition-all duration-500 hover:transform hover:scale-[1.02] product-card" data-category="清污机">
+            <div class="relative overflow-hidden">
+              <img src="images/products/清污机3.jpg" alt="螺旋式清污机" class="w-full h-44 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-2 right-2 bg-black/50 backdrop-blur-sm rounded-full p-1.5">
+                <i data-lucide="heart" class="w-3.5 h-3.5 stroke-[1.5] hover:fill-[#ff6b00] hover:stroke-[#ff6b00] transition-colors duration-300"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs uppercase tracking-widest text-[#ff6b00] font-medium">清污机系列</span>
+                <span class="text-xs text-gray-500">江苏, 中国</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-semibold mb-2 group-hover:text-[#ff6b00] transition-colors duration-300">螺旋式清污机</h3>
+              <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-3">螺旋传输机构，连续清污作业，适用于中小型水利工程。</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-gray-500">投产 2023</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[1.5] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></i>
+              </div>
+            </div>
+          </article>
+
+          <article class="min-w-[75vw] sm:min-w-[280px] lg:min-w-[320px] flex-shrink-0 snap-center group bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#1a1a1a] hover:border-[#2a2a2a] transition-all duration-500 hover:transform hover:scale-[1.02] product-card" data-category="清污机">
+            <div class="relative overflow-hidden">
+              <img src="images/products/清污机4.jpg" alt="抓斗式清污机" class="w-full h-44 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-2 right-2 bg-black/50 backdrop-blur-sm rounded-full p-1.5">
+                <i data-lucide="heart" class="w-3.5 h-3.5 stroke-[1.5] hover:fill-[#ff6b00] hover:stroke-[#ff6b00] transition-colors duration-300"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs uppercase tracking-widest text-[#ff6b00] font-medium">清污机系列</span>
+                <span class="text-xs text-gray-500">江苏, 中国</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-semibold mb-2 group-hover:text-[#ff6b00] transition-colors duration-300">抓斗式清污机</h3>
+              <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-3">强力抓斗机构，适用于重载清污作业，处理大型杂物效果显著。</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-gray-500">投产 2024</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[1.5] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></i>
+              </div>
+            </div>
+          </article>
+
+          <article class="min-w-[75vw] sm:min-w-[280px] lg:min-w-[320px] flex-shrink-0 snap-center group bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#1a1a1a] hover:border-[#2a2a2a] transition-all duration-500 hover:transform hover:scale-[1.02] product-card" data-category="清污机">
+            <div class="relative overflow-hidden">
+              <img src="images/products/清污机5.jpg" alt="移动式清污机" class="w-full h-44 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-2 right-2 bg-black/50 backdrop-blur-sm rounded-full p-1.5">
+                <i data-lucide="heart" class="w-3.5 h-3.5 stroke-[1.5] hover:fill-[#ff6b00] hover:stroke-[#ff6b00] transition-colors duration-300"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs uppercase tracking-widest text-[#ff6b00] font-medium">清污机系列</span>
+                <span class="text-xs text-gray-500">江苏, 中国</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-semibold mb-2 group-hover:text-[#ff6b00] transition-colors duration-300">移动式清污机</h3>
+              <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-3">可移动设计，灵活部署，适用于多个清污点的轮换作业。</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-gray-500">投产 2024</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[1.5] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></i>
+              </div>
+            </div>
+          </article>
+
+          <article class="min-w-[75vw] sm:min-w-[280px] lg:min-w-[320px] flex-shrink-0 snap-center group bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#1a1a1a] hover:border-[#2a2a2a] transition-all duration-500 hover:transform hover:scale-[1.02] product-card" data-category="清污机">
+            <div class="relative overflow-hidden">
+              <img src="images/products/清污机6.jpg" alt="自清洗清污机" class="w-full h-44 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-2 right-2 bg-black/50 backdrop-blur-sm rounded-full p-1.5">
+                <i data-lucide="heart" class="w-3.5 h-3.5 stroke-[1.5] hover:fill-[#ff6b00] hover:stroke-[#ff6b00] transition-colors duration-300"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs uppercase tracking-widest text-[#ff6b00] font-medium">清污机系列</span>
+                <span class="text-xs text-gray-500">江苏, 中国</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-semibold mb-2 group-hover:text-[#ff6b00] transition-colors duration-300">自清洗清污机</h3>
+              <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-3">配备自清洗功能，维护便捷，长期稳定运行，减少人工干预。</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-gray-500">投产 2024</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[1.5] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></i>
+              </div>
+            </div>
+          </article>
+
+          <article class="min-w-[75vw] sm:min-w-[280px] lg:min-w-[320px] flex-shrink-0 snap-center group bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#1a1a1a] hover:border-[#2a2a2a] transition-all duration-500 hover:transform hover:scale-[1.02] product-card" data-category="挡水闸门">
+            <div class="relative overflow-hidden">
+              <img src="images/products/闸门3.jpg" alt="叠梁闸门" class="w-full h-44 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-2 right-2 bg-black/50 backdrop-blur-sm rounded-full p-1.5">
+                <i data-lucide="heart" class="w-3.5 h-3.5 stroke-[1.5] hover:fill-[#ff6b00] hover:stroke-[#ff6b00] transition-colors duration-300"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs uppercase tracking-widest text-[#ff6b00] font-medium">挡水闸门</span>
+                <span class="text-xs text-gray-500">江苏, 中国</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-semibold mb-2 group-hover:text-[#ff6b00] transition-colors duration-300">叠梁闸门</h3>
+              <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-3">模块化设计，安装维护方便，适用于临时性挡水和应急抢险。</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-gray-500">投产 2024</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[1.5] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></i>
+              </div>
+            </div>
+          </article>
+
+          <article class="min-w-[75vw] sm:min-w-[280px] lg:min-w-[320px] flex-shrink-0 snap-center group bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#1a1a1a] hover:border-[#2a2a2a] transition-all duration-500 hover:transform hover:scale-[1.02] product-card" data-category="驱动设备">
+            <div class="relative overflow-hidden">
+              <img src="images/products/启闭机2.jpg" alt="螺杆启闭机" class="w-full h-44 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-2 right-2 bg-black/50 backdrop-blur-sm rounded-full p-1.5">
+                <i data-lucide="heart" class="w-3.5 h-3.5 stroke-[1.5] hover:fill-[#ff6b00] hover:stroke-[#ff6b00] transition-colors duration-300"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs uppercase tracking-widest text-[#ff6b00] font-medium">驱动设备</span>
+                <span class="text-xs text-gray-500">江苏, 中国</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-semibold mb-2 group-hover:text-[#ff6b00] transition-colors duration-300">螺杆启闭机</h3>
+              <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-3">精密螺杆传动，载荷能力强，广泛应用于各类闸门的启闭控制。</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-gray-500">投产 2023</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[1.5] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></i>
+              </div>
+            </div>
+          </article>
+
+          <article class="min-w-[75vw] sm:min-w-[280px] lg:min-w-[320px] flex-shrink-0 snap-center group bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#1a1a1a] hover:border-[#2a2a2a] transition-all duration-500 hover:transform hover:scale-[1.02] product-card" data-category="配套产品">
+            <div class="relative overflow-hidden">
+              <img src="images/products/闸阀2.jpg" alt="水位监测仪" class="w-full h-44 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-2 right-2 bg-black/50 backdrop-blur-sm rounded-full p-1.5">
+                <i data-lucide="heart" class="w-3.5 h-3.5 stroke-[1.5] hover:fill-[#ff6b00] hover:stroke-[#ff6b00] transition-colors duration-300"></i>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs uppercase tracking-widest text-[#ff6b00] font-medium">配套产品</span>
+                <span class="text-xs text-gray-500">江苏, 中国</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-semibold mb-2 group-hover:text-[#ff6b00] transition-colors duration-300">水位监测仪</h3>
+              <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-3">高精度水位监测设备，实时数据传输，为水利调度提供准确信息。</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-gray-500">投产 2024</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[1.5] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></i>
+              </div>
+            </div>
+          </article>
+        </div>
+        
+        <!-- 滑动指示器 (仅在移动端显示) -->
+        <div id="scroll-indicators" class="scroll-indicator sm:hidden">
+          <div class="scroll-dot active"></div>
+          <div class="scroll-dot"></div>
+          <div class="scroll-dot"></div>
+          <div class="scroll-dot"></div>
+          <div class="scroll-dot"></div>
+        </div>
+      </div>
+
+      <!-- 分类产品 - 横向滚动布局 -->
+      <div id="category-products" class="hidden">
+        <div class="category-slider flex overflow-x-auto scroll-smooth snap-x snap-mandatory space-x-4 pb-4 scrollbar-hide touch-pan-x overscroll-x-contain">
+          <!-- 分类产品将通过JavaScript动态插入 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="flex flex-col sm:flex-row gap-4 mt-8 px-4 sm:px-6 lg:px-12 fade-in">
+      <a href="#process" class="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-sm font-medium bg-[#1a1a1a] hover:bg-[#2a2a2a] border border-[#2a2a2a] hover:border-[#3a3a3a] transition-all duration-300">
+        <i data-lucide="play-circle" class="w-4 h-4 stroke-[1.5] group-hover:scale-110 transition-transform duration-300"></i>
+        Our Process
+      </a>
+      <a href="#consultation" class="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-sm font-medium bg-[#ff6b00] text-black hover:bg-[#ff7a1a] transition-all duration-300 hover:shadow-lg hover:shadow-[#ff6b00]/25">
+        <i data-lucide="calendar-check" class="w-4 h-4 stroke-[1.5] text-black group-hover:scale-110 transition-transform duration-300"></i>
+        Book Consultation
+      </a>
+      <a href="#portfolio" class="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-sm font-medium border border-[#2a2a2a] hover:border-[#ff6b00] hover:text-[#ff6b00] transition-all duration-300">
+        <i data-lucide="image" class="w-4 h-4 stroke-[1.5] group-hover:scale-110 transition-transform duration-300"></i>
+        View All Projects
+      </a>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="mt-24 px-4 sm:px-6 lg:px-12 fade-in">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-12">
+        <div>
+          <h2 class="text-4xl sm:text-5xl lg:text-7xl font-light leading-tight tracking-tight">
+            OUR <span class="text-gray-500">PROCESS</span>
+          </h2>
+          <p class="text-lg text-gray-400 mt-6 max-w-2xl leading-relaxed">
+            From initial concept to final installation, we guide you through every step of creating your dream space with meticulous attention to detail and unwavering commitment to excellence.
+          </p>
+        </div>
+        <div class="flex gap-3 mt-8 lg:mt-0">
+          <button id="processNext" class="w-12 h-12 flex items-center justify-center border border-[#2a2a2a] rounded-lg hover:bg-[#1a1a1a] hover:border-[#ff6b00] transition-all duration-300">
+            <i data-lucide="chevron-right" class="w-5 h-5 stroke-[1.5]"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Process Cards Slider -->
+      <div class="relative">
+        <div id="processSlider" class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory space-x-6 pb-4">
+          <div class="min-w-[85%] sm:min-w-[45%] lg:min-w-[32%] snap-center">
+            <div class="bg-[#0a0a0a] rounded-2xl border border-[#1a1a1a] p-8 h-full hover:border-[#2a2a2a] transition-all duration-500 group">
+              <div class="w-12 h-12 bg-[#ff6b00]/10 rounded-xl flex items-center justify-center mb-6">
+                <i data-lucide="lightbulb" class="w-6 h-6 stroke-[1.5] text-[#ff6b00]"></i>
+              </div>
+              <h3 class="text-2xl font-semibold mb-4 group-hover:text-[#ff6b00] transition-colors duration-300">Discovery &amp; Concept</h3>
+              <p class="text-gray-400 leading-relaxed mb-6">We begin with an in-depth consultation to understand your vision, lifestyle, and functional requirements. Our team develops initial concepts and mood boards that capture your unique aesthetic.</p>
+              <div class="space-y-2 text-sm">
+                <div class="flex items-center gap-2 text-gray-500">
+                  <i data-lucide="check" class="w-4 h-4 stroke-[1.5] text-[#ff6b00]"></i>
+                  Initial consultation &amp; site analysis
+                </div>
+                <div class="flex items-center gap-2 text-gray-500">
+                  <i data-lucide="check" class="w-4 h-4 stroke-[1.5] text-[#ff6b00]"></i>
+                  Concept development &amp; mood boards
+                </div>
+                <div class="flex items-center gap-2 text-gray-500">
+                  <i data-lucide="check" class="w-4 h-4 stroke-[1.5] text-[#ff6b00]"></i>
+                  Budget planning &amp; timeline
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="min-w-[85%] sm:min-w-[45%] lg:min-w-[32%] snap-center">
+            <div class="bg-[#0a0a0a] rounded-2xl border border-[#1a1a1a] p-8 h-full hover:border-[#2a2a2a] transition-all duration-500 group">
+              <div class="w-12 h-12 bg-[#ff6b00]/10 rounded-xl flex items-center justify-center mb-6">
+                <i data-lucide="drafting-compass" class="w-6 h-6 stroke-[1.5] text-[#ff6b00]"></i>
+              </div>
+              <h3 class="text-2xl font-semibold mb-4 group-hover:text-[#ff6b00] transition-colors duration-300">Design Development</h3>
+              <p class="text-gray-400 leading-relaxed mb-6">Detailed technical drawings, 3D visualizations, and material selections bring your space to life. We refine every detail to ensure perfection before moving forward.</p>
+              <div class="space-y-2 text-sm">
+                <div class="flex items-center gap-2 text-gray-500">
+                  <i data-lucide="check" class="w-4 h-4 stroke-[1.5] text-[#ff6b00]"></i>
+                  Technical drawings &amp; floor plans
+                </div>
+                <div class="flex items-center gap-2 text-gray-500">
+                  <i data-lucide="check" class="w-4 h-4 stroke-[1.5] text-[#ff6b00]"></i>
+                  Photorealistic 3D renderings
+                </div>
+                <div class="flex items-center gap-2 text-gray-500">
+                  <i data-lucide="check" class="w-4 h-4 stroke-[1.5] text-[#ff6b00]"></i>
+                  Material &amp; furniture selection
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="min-w-[85%] sm:min-w-[45%] lg:min-w-[32%] snap-center">
+            <div class="bg-[#0a0a0a] rounded-2xl border border-[#1a1a1a] p-8 h-full hover:border-[#2a2a2a] transition-all duration-500 group">
+              <div class="w-12 h-12 bg-[#ff6b00]/10 rounded-xl flex items-center justify-center mb-6">
+                <i data-lucide="hammer" class="w-6 h-6 stroke-[1.5] text-[#ff6b00]"></i>
+              </div>
+              <h3 class="text-2xl font-semibold mb-4 group-hover:text-[#ff6b00] transition-colors duration-300">Implementation</h3>
+              <p class="text-gray-400 leading-relaxed mb-6">Our experienced project managers coordinate with trusted craftsmen and suppliers to ensure flawless execution. We handle every detail so you can focus on enjoying the transformation.</p>
+              <div class="space-y-2 text-sm">
+                <div class="flex items-center gap-2 text-gray-500">
+                  <i data-lucide="check" class="w-4 h-4 stroke-[1.5] text-[#ff6b00]"></i>
+                  Project management &amp; coordination
+                </div>
+                <div class="flex items-center gap-2 text-gray-500">
+                  <i data-lucide="check" class="w-4 h-4 stroke-[1.5] text-[#ff6b00]"></i>
+                  Quality control &amp; installation
+                </div>
+                <div class="flex items-center gap-2 text-gray-500">
+                  <i data-lucide="check" class="w-4 h-4 stroke-[1.5] text-[#ff6b00]"></i>
+                  Final styling &amp; handover
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="mt-24 px-4 sm:px-6 lg:px-12 fade-in">
+      <h2 class="text-4xl sm:text-5xl lg:text-7xl font-light leading-tight tracking-tight mb-16">
+        DESIGN <span class="text-gray-500">SERVICES</span>
+      </h2>
+
+      <div class="space-y-20">
+        <!-- Service 01 -->
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start group">
+          <div class="lg:col-span-5">
+            <div class="sticky top-8">
+              <h3 class="text-sm uppercase tracking-widest text-[#ff6b00] font-medium mb-4 flex items-center gap-2">
+                <span class="w-8 h-px bg-[#ff6b00]"></span>
+                Service 01
+              </h3>
+              <h4 class="text-3xl lg:text-4xl font-semibold mb-6 group-hover:text-[#ff6b00] transition-colors duration-500">Luxury Residential</h4>
+              <p class="text-gray-400 leading-relaxed mb-8 text-lg">Transform your home into a sanctuary of style and comfort. From intimate apartments to sprawling estates, we create bespoke interiors that reflect your personality and enhance your daily life.</p>
+              
+              <div class="space-y-4 mb-8">
+                <div class="flex items-start gap-3">
+                  <i data-lucide="home" class="w-5 h-5 stroke-[1.5] text-[#ff6b00] mt-0.5"></i>
+                  <div>
+                    <h5 class="font-medium mb-1">Complete Home Design</h5>
+                    <p class="text-sm text-gray-500">Full-service interior design for all living spaces</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i data-lucide="palette" class="w-5 h-5 stroke-[1.5] text-[#ff6b00] mt-0.5"></i>
+                  <div>
+                    <h5 class="font-medium mb-1">Custom Furniture Design</h5>
+                    <p class="text-sm text-gray-500">Bespoke pieces crafted to your specifications</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i data-lucide="lightbulb" class="w-5 h-5 stroke-[1.5] text-[#ff6b00] mt-0.5"></i>
+                  <div>
+                    <h5 class="font-medium mb-1">Lighting Design</h5>
+                    <p class="text-sm text-gray-500">Sophisticated lighting schemes for ambiance and function</p>
+                  </div>
+                </div>
+              </div>
+              
+              <a href="#consultation" class="inline-flex items-center gap-2 text-[#ff6b00] hover:gap-3 transition-all duration-300 font-medium">
+                Learn More
+                <i data-lucide="arrow-right" class="w-4 h-4 stroke-[1.5]"></i>
+              </a>
+            </div>
+          </div>
+          <div class="lg:col-span-7">
+            <div class="grid sm:grid-cols-2 gap-6">
+              <img src="images/products/清污机6.jpg" alt="水利设备展示" class="w-full h-64 object-cover rounded-xl group-hover:scale-105 transition-transform duration-700">
+              <img src="images/products/闸门1.jpg" alt="现代化工厂" class="w-full h-64 object-cover rounded-xl group-hover:scale-105 transition-transform duration-700 sm:mt-8">
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 02 -->
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start group">
+          <div class="lg:col-span-7 order-2 lg:order-1">
+            <div class="grid sm:grid-cols-2 gap-6">
+              <img src="images/products/启闭机1.jpg" alt="现代化办公环境" class="w-full h-64 object-cover rounded-xl group-hover:scale-105 transition-transform duration-700 sm:mt-8">
+              <img src="images/products/启闭机2.jpg" alt="企业工作空间" class="w-full h-64 object-cover rounded-xl group-hover:scale-105 transition-transform duration-700">
+            </div>
+          </div>
+          <div class="lg:col-span-5 order-1 lg:order-2">
+            <div class="sticky top-8">
+              <h3 class="text-sm uppercase tracking-widest text-[#ff6b00] font-medium mb-4 flex items-center gap-2">
+                <span class="w-8 h-px bg-[#ff6b00]"></span>
+                Service 02
+              </h3>
+              <h4 class="text-3xl lg:text-4xl font-semibold mb-6 group-hover:text-[#ff6b00] transition-colors duration-500">Commercial Spaces</h4>
+              <p class="text-gray-400 leading-relaxed mb-8 text-lg">Design inspiring work environments that boost productivity and reflect your brand values. From corporate headquarters to boutique offices, we create spaces that drive success.</p>
+              
+              <div class="space-y-4 mb-8">
+                <div class="flex items-start gap-3">
+                  <i data-lucide="building-2" class="w-5 h-5 stroke-[1.5] text-[#ff6b00] mt-0.5"></i>
+                  <div>
+                    <h5 class="font-medium mb-1">Office Design &amp; Planning</h5>
+                    <p class="text-sm text-gray-500">Strategic workspace layouts for optimal productivity</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i data-lucide="users" class="w-5 h-5 stroke-[1.5] text-[#ff6b00] mt-0.5"></i>
+                  <div>
+                    <h5 class="font-medium mb-1">Collaborative Spaces</h5>
+                    <p class="text-sm text-gray-500">Meeting rooms and social areas that inspire teamwork</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i data-lucide="award" class="w-5 h-5 stroke-[1.5] text-[#ff6b00] mt-0.5"></i>
+                  <div>
+                    <h5 class="font-medium mb-1">Brand Integration</h5>
+                    <p class="text-sm text-gray-500">Seamlessly incorporate your company's identity</p>
+                  </div>
+                </div>
+              </div>
+              
+              <a href="#consultation" class="inline-flex items-center gap-2 text-[#ff6b00] hover:gap-3 transition-all duration-300 font-medium">
+                Learn More
+                <i data-lucide="arrow-right" class="w-4 h-4 stroke-[1.5]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 03 -->
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start group">
+          <div class="lg:col-span-5">
+            <div class="sticky top-8">
+              <h3 class="text-sm uppercase tracking-widest text-[#ff6b00] font-medium mb-4 flex items-center gap-2">
+                <span class="w-8 h-px bg-[#ff6b00]"></span>
+                Service 03
+              </h3>
+              <h4 class="text-3xl lg:text-4xl font-semibold mb-6 group-hover:text-[#ff6b00] transition-colors duration-500">Hospitality Design</h4>
+              <p class="text-gray-400 leading-relaxed mb-8 text-lg">Create memorable experiences through thoughtful design. Our hospitality projects combine luxury with functionality to ensure guests feel welcomed and valued.</p>
+              
+              <div class="space-y-4 mb-8">
+                <div class="flex items-start gap-3">
+                  <i data-lucide="bed" class="w-5 h-5 stroke-[1.5] text-[#ff6b00] mt-0.5"></i>
+                  <div>
+                    <h5 class="font-medium mb-1">Hotel &amp; Resort Design</h5>
+                    <p class="text-sm text-gray-500">Luxurious accommodations that exceed expectations</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i data-lucide="utensils" class="w-5 h-5 stroke-[1.5] text-[#ff6b00] mt-0.5"></i>
+                  <div>
+                    <h5 class="font-medium mb-1">Restaurant Concepts</h5>
+                    <p class="text-sm text-gray-500">Dining spaces that enhance the culinary journey</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i data-lucide="map-pin" class="w-5 h-5 stroke-[1.5] text-[#ff6b00] mt-0.5"></i>
+                  <div>
+                    <h5 class="font-medium mb-1">Experiential Retail</h5>
+                    <p class="text-sm text-gray-500">Immersive shopping environments that drive engagement</p>
+                  </div>
+                </div>
+              </div>
+              
+              <a href="#consultation" class="inline-flex items-center gap-2 text-[#ff6b00] hover:gap-3 transition-all duration-300 font-medium">
+                Learn More
+                <i data-lucide="arrow-right" class="w-4 h-4 stroke-[1.5]"></i>
+              </a>
+            </div>
+          </div>
+          <div class="lg:col-span-7">
+            <div class="grid sm:grid-cols-2 gap-6">
+              <img src="images/products/闸阀1.jpg" alt="控制系统展示" class="w-full h-64 object-cover rounded-xl group-hover:scale-105 transition-transform duration-700">
+              <img src="images/products/闸阀2.jpg" alt="设备展示厅" class="w-full h-64 object-cover rounded-xl group-hover:scale-105 transition-transform duration-700 sm:mt-8">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="mt-24 px-4 sm:px-6 lg:px-12 fade-in">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl sm:text-5xl lg:text-7xl font-light leading-tight tracking-tight mb-16">
+          关于 <span class="text-[#ff6b00]">联福</span>
+        </h2>
+        
+        <!-- 公司核心信息 -->
+        <div class="grid lg:grid-cols-2 gap-12 mb-16">
+          <div>
+            <h3 class="text-2xl font-semibold mb-6 text-[#ff6b00]">企业概况</h3>
+            <div class="space-y-4 text-gray-400 leading-relaxed">
+              <p><strong class="text-white">韶关市联福机械制造有限公司</strong>成立于2014年9月23日，位于韶关市浈江区聆韶路21号。</p>
+              <p>我们是一家专业从事水工机械、启闭机、闸门设备的设计开发、制造、销售、安装一体化的现代化水利工程机械企业。</p>
+              <p>公司拥有精良的生产设备、雄厚的技术力量、完备的检测手段和健全的质量保证体系。产品销往全国30个省、自治区、直辖市。</p>
+            </div>
+            
+            <!-- 企业理念 -->
+            <div class="mt-8 p-6 bg-[#0a0a0a] rounded-xl border border-[#1a1a1a]">
+              <h4 class="text-lg font-semibold mb-3 text-[#ff6b00]">企业理念</h4>
+              <p class="text-gray-400 italic">"诚实守信、求真务实、拼搏创新"</p>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-2xl font-semibold mb-6 text-[#ff6b00]">核心优势</h3>
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-[#ff6b00]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="award" class="w-5 h-5 text-[#ff6b00]"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2">品质保证</h4>
+                  <p class="text-sm text-gray-400">经水利部质量检测中心检测，各项技术指标均达到部颁标准</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-[#ff6b00]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="users" class="w-5 h-5 text-[#ff6b00]"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2">专业团队</h4>
+                  <p class="text-sm text-gray-400">高素质专业队伍，先进的企业管理模式</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-[#ff6b00]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="map" class="w-5 h-5 text-[#ff6b00]"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2">全国服务</h4>
+                  <p class="text-sm text-gray-400">完善的销售网络和售后服务体系，覆盖全国</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-[#ff6b00]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <i data-lucide="settings" class="w-5 h-5 text-[#ff6b00]"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2">一体化服务</h4>
+                  <p class="text-sm text-gray-400">设计、制造、销售、安装全流程服务</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 产品系列可展开区域 -->
+        <div class="bg-[#0a0a0a] rounded-2xl border border-[#1a1a1a] overflow-hidden">
+          <button id="products-toggle" class="w-full p-6 text-left flex items-center justify-between hover:bg-[#1a1a1a] transition-colors duration-300">
+            <div>
+              <h3 class="text-xl font-semibold text-[#ff6b00] mb-2">主要产品系列</h3>
+              <p class="text-gray-400">点击查看详细产品列表</p>
+            </div>
+            <i data-lucide="chevron-down" id="products-chevron" class="w-6 h-6 text-[#ff6b00] transition-transform duration-300"></i>
+          </button>
+          
+          <div id="products-content" class="hidden border-t border-[#1a1a1a]">
+            <div class="p-6 grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="font-semibold mb-4 text-[#ff6b00]">标准产品系列</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-[#ff6b00]"></i>
+                    螺杆启闭机系列
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-[#ff6b00]"></i>
+                    卷扬启闭机系列
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-[#ff6b00]"></i>
+                    闸门系列产品
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-[#ff6b00]"></i>
+                    新型水利浮式拍门
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-[#ff6b00]"></i>
+                    QL手电两用螺杆启闭机
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-[#ff6b00]"></i>
+                    回转式自动清污机
+                  </li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 class="font-semibold mb-4 text-[#ff6b00]">工程配套产品</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-[#ff6b00]"></i>
+                    铸铁闸门、压力管道
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-[#ff6b00]"></i>
+                    手动/电动吊车设备
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-[#ff6b00]"></i>
+                    双梁吊车、拍门系列
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-[#ff6b00]"></i>
+                    伸缩节、复合拍门
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-[#ff6b00]"></i>
+                    水轮机、蝶阀系列
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-[#ff6b00]"></i>
+                    卧式转轮、导叶等
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- 实地工程案例 -->
+            <div class="px-6 pb-6">
+              <h4 class="font-semibold mb-4 text-[#ff6b00]">重点工程案例</h4>
+              <div class="bg-[#1a1a1a] rounded-lg p-4">
+                <p class="text-sm text-gray-400 mb-2">
+                  <strong class="text-white">南雄三枫清污机工程</strong> - 大型水利枢纽清污系统
+                </p>
+                <p class="text-xs text-gray-500">包含回转式清污机、导叶系统、压力管道等完整配套设施</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 联系信息 -->
+        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="text-center p-6 bg-[#0a0a0a] rounded-xl border border-[#1a1a1a]">
+            <i data-lucide="map-pin" class="w-8 h-8 text-[#ff6b00] mx-auto mb-4"></i>
+            <h4 class="font-semibold mb-2">公司地址</h4>
+            <p class="text-sm text-gray-400">韶关市浈江区聆韶路21号</p>
+          </div>
+          
+          <div class="text-center p-6 bg-[#0a0a0a] rounded-xl border border-[#1a1a1a]">
+            <i data-lucide="calendar" class="w-8 h-8 text-[#ff6b00] mx-auto mb-4"></i>
+            <h4 class="font-semibold mb-2">成立时间</h4>
+            <p class="text-sm text-gray-400">2014年9月23日</p>
+          </div>
+          
+          <div class="text-center p-6 bg-[#0a0a0a] rounded-xl border border-[#1a1a1a]">
+            <i data-lucide="map" class="w-8 h-8 text-[#ff6b00] mx-auto mb-4"></i>
+            <h4 class="font-semibold mb-2">服务范围</h4>
+            <p class="text-sm text-gray-400">全国30个省市自治区</p>
+          </div>
+          
+          <div class="text-center p-6 bg-[#0a0a0a] rounded-xl border border-[#1a1a1a]">
+            <i data-lucide="shield-check" class="w-8 h-8 text-[#ff6b00] mx-auto mb-4"></i>
+            <h4 class="font-semibold mb-2">质量认证</h4>
+            <p class="text-sm text-gray-400">水利部质检中心认证</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="consultation" class="mt-24 px-4 sm:px-6 lg:px-12 mb-16 fade-in">
+      <div class="bg-gradient-to-br from-[#0a0a0a] to-[#1a1a1a] rounded-3xl border border-[#2a2a2a] p-8 lg:p-12">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-light leading-tight tracking-tight mb-6">
+            START YOUR <span class="text-[#ff6b00]">JOURNEY</span>
+          </h2>
+          <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Ready to transform your space? Schedule a consultation with our design experts and take the first step towards your dream environment.
+          </p>
+          
+          <div class="flex justify-center mb-12">
+            <a href="mailto:hello@meridiandesign.studio" class="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-lg font-medium bg-[#ff6b00] text-black hover:bg-[#ff7a1a] transition-all duration-300 hover:shadow-xl hover:shadow-[#ff6b00]/25">
+              <i data-lucide="mail" class="w-5 h-5 stroke-[1.5] text-black group-hover:scale-110 transition-transform duration-300"></i>
+              致电咨询
+            </a>
+          </div>
+          
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-8 text-center">
+            <div class="flex items-center gap-3">
+              <i data-lucide="clock" class="w-5 h-5 stroke-[1.5] text-[#ff6b00]"></i>
+              <span class="text-gray-400">4小时内回复</span>
+            </div>
+            <div class="hidden sm:block w-px h-6 bg-[#2a2a2a]"></div>
+            <div class="flex items-center gap-3">
+              <i data-lucide="shield-check" class="w-5 h-5 stroke-[1.5] text-[#ff6b00]"></i>
+              <span class="text-gray-400">Free initial consultation</span>
+            </div>
+            <div class="hidden sm:block w-px h-6 bg-[#2a2a2a]"></div>
+            <div class="flex items-center gap-3">
+              <i data-lucide="star" class="w-5 h-5 stroke-[1.5] text-[#ff6b00]"></i>
+              <span class="text-gray-400">5-star rated service</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lucide Icons Script -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+    
+    // Product filtering functionality
+    let currentCategory = '全部'; // 默认选中全部
+    
+    // 产品数据
+    const productData = {
+      '清污机': [
+        {
+          image: 'images/products/清污机1.jpg',
+          title: '回转式清污机',
+          category: '清污机系列',
+          description: '高效清除水体杂物，配备自动化控制系统，适用于各种水利工程的前池清污作业。',
+          year: '2024'
+        },
+        {
+          image: 'images/products/清污机2.jpg',
+          title: '格栅清污机',
+          category: '清污机系列',
+          description: '专业格栅清污设备，自动清除拦截的垃圾和杂物，保持水流畅通。',
+          year: '2024'
+        },
+        {
+          image: 'images/products/清污机3.jpg',
+          title: '螺旋式清污机',
+          category: '清污机系列',
+          description: '螺旋传输机构，连续清污作业，适用于中小型水利工程。',
+          year: '2023'
+        },
+        {
+          image: 'images/products/清污机4.jpg',
+          title: '抓斗式清污机',
+          category: '清污机系列',
+          description: '强力抓斗机构，适用于重载清污作业，处理大型杂物效果显著。',
+          year: '2024'
+        },
+        {
+          image: 'images/products/清污机5.jpg',
+          title: '移动式清污机',
+          category: '清污机系列',
+          description: '可移动设计，灵活部署，适用于多个清污点的轮换作业。',
+          year: '2024'
+        },
+        {
+          image: 'images/products/清污机6.jpg',
+          title: '自清洗清污机',
+          category: '清污机系列',
+          description: '配备自清洗功能，维护便捷，长期稳定运行，减少人工干预。',
+          year: '2024'
+        }
+      ],
+      '挡水闸门': [
+        {
+          image: 'images/products/闸门1.jpg',
+          title: '平面钢闸门',
+          category: '挡水闸门',
+          description: '高强度钢结构设计，具备优良的水密性和耐腐蚀性，广泛应用于水利枢纽工程。',
+          year: '2023'
+        },
+        {
+          image: 'images/products/闸门2.jpg',
+          title: '弧形闸门',
+          category: '挡水闸门',
+          description: '采用弧形设计，承压能力强，适用于大型水利枢纽和水电站的挡水控制。',
+          year: '2023'
+        },
+        {
+          image: 'images/products/闸门3.jpg',
+          title: '叠梁闸门',
+          category: '挡水闸门',
+          description: '模块化设计，安装维护方便，适用于临时性挡水和应急抢险。',
+          year: '2024'
+        }
+      ],
+      '驱动设备': [
+        {
+          image: 'images/products/启闭机1.jpg',
+          title: '电动推杆系统',
+          category: '驱动设备',
+          description: '精密的电动推杆驱动系统，提供稳定可靠的动力输出，适用于各类水利设备控制。',
+          year: '2024'
+        },
+        {
+          image: 'images/products/启闭机2.jpg',
+          title: '螺杆启闭机',
+          category: '驱动设备',
+          description: '精密螺杆传动，载荷能力强，广泛应用于各类闸门的启闭控制。',
+          year: '2023'
+        }
+      ],
+      '配套产品': [
+        {
+          image: 'images/products/闸阀1.jpg',
+          title: '联福控制系统',
+          category: '配套产品',
+          description: '智能化控制系统，支持远程监控和自动化操作，确保水利设备高效稳定运行。',
+          year: '2023'
+        },
+        {
+          image: 'images/products/闸阀2.jpg',
+          title: '水位监测仪',
+          category: '配套产品',
+          description: '高精度水位监测设备，实时数据传输，为水利调度提供准确信息。',
+          year: '2024'
+        }
+      ]
+    };
+    
+    // 创建产品卡片HTML
+    function createProductCard(product) {
+      return `
+        <article class="min-w-[75vw] sm:min-w-[280px] lg:min-w-[320px] flex-shrink-0 snap-center group bg-[#0a0a0a] rounded-xl overflow-hidden border border-[#1a1a1a] hover:border-[#2a2a2a] transition-all duration-500 hover:transform hover:scale-[1.02] product-card">
+          <div class="relative overflow-hidden">
+            <img src="${product.image}" alt="${product.title}" class="w-full h-44 sm:h-56 object-cover group-hover:scale-110 transition-transform duration-700">
+            <div class="absolute top-2 right-2 bg-black/50 backdrop-blur-sm rounded-full p-1.5">
+              <i data-lucide="heart" class="w-3.5 h-3.5 stroke-[1.5] hover:fill-[#ff6b00] hover:stroke-[#ff6b00] transition-colors duration-300"></i>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs uppercase tracking-widest text-[#ff6b00] font-medium">${product.category}</span>
+              <span class="text-xs text-gray-500">江苏, 中国</span>
+            </div>
+            <h3 class="text-base sm:text-lg font-semibold mb-2 group-hover:text-[#ff6b00] transition-colors duration-300">${product.title}</h3>
+            <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-3">${product.description}</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-gray-500">投产 ${product.year}</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[1.5] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></i>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+    
+    // 产品过滤函数
+    function filterProducts(category) {
+      currentCategory = category;
+      
+      const allProductsContainer = document.getElementById('all-products');
+      const categoryProductsContainer = document.getElementById('category-products');
+      const categorySlider = categoryProductsContainer.querySelector('.category-slider');
+      
+      // 更新分类按钮样式
+      document.querySelectorAll('#category-tabs button').forEach(btn => {
+        btn.className = btn.className.replace(/relative pb-3 text-sm font-medium uppercase tracking-widest.*/, 
+          'text-sm font-medium uppercase tracking-widest text-gray-500 hover:text-white transition-colors duration-300 whitespace-nowrap');
+        const span = btn.querySelector('span');
+        if (span) {
+          btn.innerHTML = btn.textContent.trim();
+        }
+      });
+      
+      const activeButton = Array.from(document.querySelectorAll('#category-tabs button'))
+        .find(btn => btn.textContent.trim() === category);
+      
+      if (activeButton) {
+        activeButton.className = 'relative pb-3 text-sm font-medium uppercase tracking-widest whitespace-nowrap';
+        activeButton.innerHTML = `
+          <span class="relative">
+            ${category}
+            <div class="absolute -bottom-3 left-0 h-0.5 w-full bg-[#ff6b00]"></div>
+          </span>
+        `;
+      }
+      
+      if (category === '全部') {
+        // 显示横向滚动的全部产品
+        allProductsContainer.classList.remove('hidden');
+        categoryProductsContainer.classList.add('hidden');
+      } else {
+        // 显示特定分类的横向滚动产品
+        allProductsContainer.classList.add('hidden');
+        categoryProductsContainer.classList.remove('hidden');
+        
+        // 生成分类产品
+        const products = productData[category] || [];
+        categorySlider.innerHTML = products.map(createProductCard).join('');
+        
+        // 重新初始化lucide图标
+        lucide.createIcons();
+      }
+    }
+    
+    // 改进的滑动指示器更新函数
+    function updateScrollIndicators() {
+      const slider = document.getElementById('products-slider');
+      const indicators = document.querySelectorAll('#scroll-indicators .scroll-dot');
+      
+      if (!slider || indicators.length === 0) return;
+      
+      const scrollLeft = slider.scrollLeft;
+      const scrollWidth = slider.scrollWidth - slider.clientWidth;
+      
+      if (scrollWidth <= 0) {
+        indicators.forEach(dot => dot.classList.remove('active'));
+        if (indicators[0]) indicators[0].classList.add('active');
+        return;
+      }
+      
+      const currentIndex = Math.round((scrollLeft / scrollWidth) * (indicators.length - 1));
+      
+      indicators.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+      });
+    }
+    
+    // 滑动事件监听
+    const productsSlider = document.getElementById('products-slider');
+    if (productsSlider) {
+      // 添加滑动事件监听
+      productsSlider.addEventListener('scroll', updateScrollIndicators);
+      
+      // 触摸滑动支持
+      let startX = 0;
+      let scrollStart = 0;
+      
+      productsSlider.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        scrollStart = productsSlider.scrollLeft;
+      }, { passive: true });
+      
+      productsSlider.addEventListener('touchmove', (e) => {
+        if (!startX) return;
+        
+        const currentX = e.touches[0].clientX;
+        const diff = startX - currentX;
+        productsSlider.scrollLeft = scrollStart + diff;
+      }, { passive: true });
+      
+      productsSlider.addEventListener('touchend', () => {
+        startX = 0;
+        scrollStart = 0;
+      }, { passive: true });
+    }
+    
+    // 滑动指示器点击事件
+    const indicators = document.querySelectorAll('#scroll-indicators .scroll-dot');
+    indicators.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        const slider = document.getElementById('products-slider');
+        if (!slider) return;
+        
+        const scrollWidth = slider.scrollWidth - slider.clientWidth;
+        const targetScroll = (scrollWidth * index) / (indicators.length - 1);
+        
+        slider.scrollTo({
+          left: targetScroll,
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // 左右滑动按钮
+    // 左右滑动按钮
+    const scrollLeftBtn = document.getElementById('scroll-left');
+    const scrollRightBtn = document.getElementById('scroll-right');
+    
+    if (scrollLeftBtn && scrollRightBtn) {
+      scrollLeftBtn.addEventListener('click', () => {
+        const slider = document.getElementById('products-slider');
+        if (!slider) return;
+        
+        const isMobile = window.innerWidth < 640;
+        const cardWidth = isMobile ? (window.innerWidth * 0.75 + 16) : (280 + 16);
+        slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      });
+      
+      scrollRightBtn.addEventListener('click', () => {
+        const slider = document.getElementById('products-slider');
+        if (!slider) return;
+        
+        const isMobile = window.innerWidth < 640;
+        const cardWidth = isMobile ? (window.innerWidth * 0.75 + 16) : (280 + 16);
+        slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      });
+    }
+    
+    // 窗口大小变化时更新滑动指示器
+    window.addEventListener('resize', () => {
+      setTimeout(updateScrollIndicators, 100);
+    });
+    
+    // 移动端导航功能
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navLinks = document.getElementById('nav-links');
+    const mobileClose = document.getElementById('mobile-close');
+
+    if (mobileToggle && navLinks && mobileClose) {
+      mobileToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('hidden');
+      });
+
+      mobileClose.addEventListener('click', () => {
+        navLinks.classList.add('hidden');
+      });
+
+      // 点击外部关闭移动菜单
+      document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !mobileToggle.contains(e.target)) {
+          navLinks.classList.add('hidden');
+        }
+      });
+    }
+    
+    // Process slider functionality
+    const processNext = document.getElementById('processNext');
+    if (processNext) {
+      processNext.addEventListener('click', function() {
+        const slider = document.getElementById('processSlider');
+        if (slider) {
+          const cardWidth = slider.querySelector('div').offsetWidth + 24; // card width + gap
+          slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        }
+      });
+    }
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body></html>
+
+
+
